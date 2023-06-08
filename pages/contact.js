@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, useToast } from '@chakra-ui/react';
 import { sendContactForm } from '@/lib/api';
-import { FadeInOnScroll } from ".//scrollAnimation.jsx"
+
 const initValues = { fullname: "", email: "", subject: "", message: "" };
 
 const initState = { isLoading: false, error: "", values: initValues };

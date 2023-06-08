@@ -8,12 +8,12 @@ const HomePage = () => {
             <h2 className="text-white text-5xl font-outfit font-normal">Hey there, I am</h2>
             <h1 className="text-[#FCA311] text-8xl py-2 font-outfit font-semibold">Andre Santiago</h1>
             <p className="text-[#E5E5E5] text-3xl py-5 font-outfit font-light">
-            I'm a front-end web developer with a passion for creating beautiful, intuitive user experiences. 
+            I&apos;m a front-end web developer with a passion for creating beautiful, intuitive user experiences. 
             My skills include HTML, CSS, JavaScript, React, and other front-end frameworks. 
-            While I'm primarily focused on front-end development, I'm also learning back-end development on the side, with minimal experience in Node.js and MongoDB. 
-            I'm always looking for new challenges and opportunities to ‎   
+            While I&apos;m primarily focused on front-end development, I&apos;m also learning back-end development on the side, with minimal experience in Node.js and MongoDB. 
+            I&apos;m always looking for new challenges and opportunities to ‎   
             <Typed className="text-[#FCA311]" strings={['learn', 'grow', 'explore']} typeSpeed={120} backSpeed={140} loop/>
-            , so please feel free to explore my portfolio and reach out if you're interested in working together.
+            , so please feel free to explore my portfolio and reach out if you&apos;re interested in working together.
             </p>
         </div>
         <ul className="flex space-x-4 items-center justify-center">

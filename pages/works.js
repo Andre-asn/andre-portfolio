@@ -1,6 +1,6 @@
 import React from "react";
 import { GiMicrophone } from "react-icons/gi"
-import { FadeInOnScroll } from ".//scrollAnimation.jsx"
+import { FadeInOnScroll } from "../lib/scrollAnimation.jsx"
 
 const Works = () => {
     return (
