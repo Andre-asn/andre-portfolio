@@ -21,10 +21,10 @@ const Navbar = () => {
                     <Link to="about" spy={true} smooth={true} offset={-80} duration={500} className="text-white cursor-pointer font-dongle text-3xl mx-7 transition-all ease-in-out hover:text-[#FCA311] hover:border-b-2">About</Link>
                 </li>
                 <li className="nav-item">
-                    <Link to="works" spy={true} smooth={true} offset={-70} duration={500} className="text-white cursor-pointer font-dongle text-3xl mx-7 transition-all ease-in-out hover:text-[#FCA311] hover:border-b-2">Works</Link>
+                    <Link to="works" spy={true} smooth={true} offset={-50} duration={500} className="text-white cursor-pointer font-dongle text-3xl mx-7 transition-all ease-in-out hover:text-[#FCA311] hover:border-b-2">Works</Link>
                 </li>
                 <li className="nav-item">
-                    <Link to="contact" spy={true} smooth={true} offset={-60} duration={500} className="text-white cursor-pointer font-dongle text-3xl mx-7 transition-all ease-in-out hover:text-[#FCA311] hover:border-b-2">Contact</Link>
+                    <Link to="contact" spy={true} smooth={true} offset={-40} duration={500} className="text-white cursor-pointer font-dongle text-3xl mx-7 transition-all ease-in-out hover:text-[#FCA311] hover:border-b-2">Contact</Link>
                 </li>
             </ul>
             <div onClick={handleNav} className="block md:hidden">
