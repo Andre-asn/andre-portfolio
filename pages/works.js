@@ -6,7 +6,7 @@ const Works = () => {
     return (
 <div id="works" className="overflow-hidden min-h-screen flex flex-col justify-center align-middle items-center">
 <FadeInOnScroll>
-  <h1 class="mt-32 text-6xl pb-12 font-outfit font-normal text-white text-center">Some of my <span className="text-[#FCA311] font-semibold">work</span></h1>
+  <h1 class="mt-32 text-6xl pb-10 font-outfit font-normal text-white text-center">Some of my <span className="text-[#FCA311] font-semibold">work</span></h1>
   <div class="overflow-hidden flex flex-col md:flex-row gap-4 items-center">
     <div class="backdrop-blur-[1rem] bg-white/30 p-6 rounded-md shadow-md flex flex-col items-center max-w-[400px]">
       <h2 class="shadow-xl py-4 text-2xl text-white bg-[#14213D] w-full text-center mb-4">Anime Figures eCommerce</h2>

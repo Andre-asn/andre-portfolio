@@ -35,7 +35,7 @@ const Contact = () => {
   };
 
   return (
-    <form id="contact" className="min-h-screen flex justify-center align-middle items-center text-white">
+    <form id="contact" className="mt-20 md:mt-0 min-h-screen flex justify-center align-middle items-center text-white">
       <div className="bg-[#14213D] min-w-full py-14 shadow-lg rounded-lg">
       <h1 className="text-6xl pb-6 font-outfit font-normal text-center text-white">Get in <span className="text-[#FCA311] font-semibold">touch</span></h1>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -5,7 +5,7 @@ const About = () => {
     return ( 
       <div id="about" class="container mx-auto">
         <FadeInOnScroll>
-          <div class="grid grid-cols-1 md:grid-cols-2 h-screen">
+          <div class="grid grid-cols-1 md:grid-cols-2 min-h-screen">
             <div class="max-h-96 md:h-screen">
               <img class="w-screen h-screen object-cover object-top" src="test2.jpg" alt=""/>
             </div>

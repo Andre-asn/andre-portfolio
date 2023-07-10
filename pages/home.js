@@ -3,10 +3,10 @@ import Typed from "react-typed";
 
 const HomePage = () => {
     return (
-        <div id="home" className="pt-12 flex flex-col items-center justify-center min-h-screen bg-fixed bg-center bg-cover sticky bg-image">
+        <div id="home" className="pt-12 mb-20 md:mb-0 flex flex-col items-center justify-center min-h-screen bg-fixed bg-center bg-cover sticky bg-image">
         <div className="max-w-full text-start p-10">
             <h2 className="text-white text-5xl font-outfit font-normal">Hey there, I am</h2>
-            <h1 className="text-[#FCA311] text-8xl py-2 font-outfit font-semibold">Andre Santiago</h1>
+            <h1 className="text-[#FCA311] text-7xl py-2 font-outfit font-semibold">Andre Santiago</h1>
             <p className="text-[#E5E5E5] max-w-[1850px] text-3xl py-5 font-outfit font-light">
             I&apos;m a front-end web developer with a passion for creating beautiful, intuitive user experiences. 
             My skills include HTML, CSS, JavaScript, React, and other front-end frameworks. 
