@@ -36,7 +36,7 @@ const HomePage = () => {
                 </form>
               </li>
             <li>
-              <form action="https://www.linkedin.com/in/andre-santiago-b14364266" target="_blank">
+              <form action="https://www.linkedin.com/in/andre-santiago-neyra/" target="_blank">
               <button
                 type="submit"
                 data-te-ripple-init
