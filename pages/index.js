@@ -3,7 +3,6 @@ import About from "./about"
 import Head from "next/head"
 import Works from "./works"
 import Contact from "./contact"
-import { SpeedInsights } from "@vercel/speed-insights/react"
 
 export default function Home() {
   return (
@@ -17,7 +16,6 @@ export default function Home() {
     <About />
     <Works />
     <Contact />
-    <SpeedInsights />
     </div>
   )
 }
