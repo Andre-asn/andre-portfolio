@@ -9,8 +9,8 @@ const HomePage = () => {
             <h1 className="text-[#FCA311] text-7xl py-2 font-outfit font-semibold">Andre Santiago</h1>
             <p className="text-[#E5E5E5] max-w-[1850px] text-3xl py-5 font-outfit font-light">
             I&apos;m a software engineering student with a passion for creating beautiful, intuitive user experiences. 
-            My skills include python, javascript, html/css and some front-end frameworks. 
-            While I&apos;m primarily focused on infrastructure and design, I&apos;m also learning databases on the side, having worked with SQL and have minimal experience in Node.js and MongoDB. 
+            My skills include Python, Javascript, HTML/CSS and some front-end frameworks. 
+            While I&apos;m primarily focused on infrastructure and design, I&apos;m also learning databases on the side, having worked with SQL and learning Node.js and MongoDB. 
             I&apos;m always looking for new challenges and opportunities to ‎   
             <Typed className="text-[#FCA311]" strings={['learn', 'grow', 'explore']} typeSpeed={120} backSpeed={140} loop/>
             , so please feel free to explore my portfolio and reach out if you&apos;re interested in working together.
