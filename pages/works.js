@@ -33,7 +33,7 @@ const Works = () => {
     <div class="backdrop-blur-[1rem] bg-white/30 p-6 rounded-md shadow-md flex flex-col items-center max-w-[400px]">
       <h2 class="shadow-xl py-4 text-2xl text-white bg-[#14213D] w-full text-center mb-4">Nutrition AI</h2>
       <p class="text-xl break-words text-[#E5E5E5] text-center">
-        Current group project in my Agile Methods class. Working with a group of talented students to create an app that recognizes pictures of food and returns nutritional facts, along with added features like profiles, friends list, and more. Tech stack includes React + Vite, Node.js, Gemini API, and NeDB.
+        Current group project in my Agile Methods class. Working with a group of talented students to create an app that recognizes pictures of food and returns nutritional facts, along with added features like profiles, friends list, and more. Tech stack includes React + Vite, Node.js, Gemini API, and NeDB. Project will continue to be updated as the semester goes along.
       </p>
       <form action="https://github.com/danzam284/NutritionAI" target="_blank">
         <button disabled type="submit" className="shadow-lg ring-white ring-1 hover:bg-[#FCA311] transition ease-in-out text-white text-lg font-bold mt-6 px-6 py-3 rounded">
