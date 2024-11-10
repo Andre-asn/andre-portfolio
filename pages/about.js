@@ -15,7 +15,7 @@ const About = () => {
               <p class="break-words mb-3 text-2xl pt-8 text-black md:text-[#E5E5E5]">
                 I&apos;m a student at Stevens Institute of Tech, and I&apos;ll receive a Masters of Science in Software Engineering in 2025. I was born and raised in Queens before relocating to New Jersey in 2013.
                 I went to Fort Lee High School, where I took an introductory class that exposed me to Visual Basic and helped me find my passion of coding/development.
-                Since then, I&apos;ve continued to explore computer science by taking classes about OOP, learning system design, and expanding my knowledge of databases
+                Since then, I&apos;ve continued to explore computer science by taking classes about OOP, learning system design, and expanding my knowledge of databases.
                 I like to spend my free time wandering the city, eating new things, and catching up with loved ones. I&apos;m eager to find out where my career takes me and look forward to all the opportunities that lie ahead.</p>
               </div>
             </div>
