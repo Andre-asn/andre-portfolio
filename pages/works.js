@@ -14,7 +14,7 @@ const Works = () => {
         First biggest project I ever created. It was made during my time in college for a final in a database class. Currently in the process of transferring the database to MongoDB since I had originally made it in a school-based database that I no longer have access to, however you may view the source code on Github. Keeping all the work original, it is not mobile responsive.
       </p>
       <form action="https://github.com/Andre-asn/ecommerce-proj" target="_blank">
-        <button disabled type="submit" className="shadow-lg ring-white ring-1 hover:bg-[#FCA311] transition ease-in-out text-white text-lg font-bold mt-6 px-6 py-3 rounded">
+        <button type="submit" className="shadow-lg ring-white ring-1 hover:bg-[#FCA311] transition ease-in-out text-white text-lg font-bold mt-6 px-6 py-3 rounded">
           View
         </button>
       </form>
@@ -36,7 +36,7 @@ const Works = () => {
         Current group project in my Agile Methods class. Working with a group of talented students to create an app that recognizes pictures of food and returns nutritional facts, along with added features like profiles, friends list, and more. Tech stack includes React + Vite, Node.js, Gemini API, and NeDB. Project will continue to be updated as the semester goes along.
       </p>
       <form action="https://github.com/danzam284/NutritionAI" target="_blank">
-        <button disabled type="submit" className="shadow-lg ring-white ring-1 hover:bg-[#FCA311] transition ease-in-out text-white text-lg font-bold mt-6 px-6 py-3 rounded">
+        <button type="submit" className="shadow-lg ring-white ring-1 hover:bg-[#FCA311] transition ease-in-out text-white text-lg font-bold mt-6 px-6 py-3 rounded">
           View
         </button>
       </form>
