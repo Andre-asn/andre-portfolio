@@ -13,7 +13,7 @@ export default function Home() {
           src="/bg.gif"
           alt="background"
           fill
-          className="object-cover"
+          className="object-cover brightness-65"
           priority
         />
       </div>
