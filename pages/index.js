@@ -9,14 +9,16 @@ export default function Home() {
   return (
     <div className="relative min-h-screen">
       <div className="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden">
+      <div className="absolute inset-0 bg-black/50 z-10"></div>
         <Image
           src="/bg.gif"
           alt="background"
           fill
-          className="object-cover brightness-65"
+          className="object-cover brightness-75"
           priority
         />
       </div>
+      <div className="relative z-20">
       <Head>
         <title>My Portfolio</title>
         <meta name='description' content='Made using Next.js & Tailwindcss' />
@@ -26,6 +28,7 @@ export default function Home() {
       <About />
       <Works />
       <Contact />
+    </div>
     </div>
   )
 }
