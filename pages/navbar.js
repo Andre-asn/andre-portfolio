@@ -10,9 +10,8 @@ const Navbar = () => {
     }
 
     return (
-        <nav className="fixed top-0 left-0 w-full bg-[#14213D]/80 backdrop-blur-sm z-50 shadow-lg">
-        <div className="max-w-7xl mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
+    <div className="fixed left-0 top-0 w-full z-50">
+        <div className="bg-[#14213D] shadow-2xl rounded-md px-10 h-20 max-w-[1500px] mx-auto mb-12 mt-6 flex justify-between items-center">
             <div className="text-white font-dongle font-medium text-5xl">Portfolio.</div>
             <ul className="hidden md:flex space-x-4">
                 <li className="nav-item">
@@ -49,7 +48,6 @@ const Navbar = () => {
             </div>
         </div>
     </div>
-    </nav>
     );
 }
 
