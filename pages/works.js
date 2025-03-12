@@ -32,7 +32,7 @@ const Works = () => {
                     <div className="backdrop-blur-[1rem] bg-white/30 p-6 rounded-md shadow-md flex flex-col items-center max-w-[400px]">
                         <h2 className="shadow-xl py-4 text-2xl text-white bg-[#14213D] w-full text-center mb-4">Stroopy</h2>
                         <p className="text-xl break-words text-[#E5E5E5] text-center">
-                            A real-time 1v1 multiplayer game (and singleplayer) based on the Stroop Test, an experiment that challenges players to quickly and accurately respond to color-word matching tasks. The game tests players' cognitive processing speed and ability to overcome cognitive interference.
+                            A real-time 1v1 multiplayer game (and singleplayer) based on the Stroop Test, an experiment that challenges players to quickly and accurately respond to color-word matching tasks. The game tests players cognitive processing speed and ability to overcome cognitive interference.
                         </p>
                         <form action="https://stroopy.vercel.app" target="_blank">
                             <button type="submit" className="shadow-lg ring-white ring-1 hover:bg-[#FCA311] transition ease-in-out text-white text-lg font-bold mt-6 px-6 py-3 rounded">
