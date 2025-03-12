@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div className="relative min-h-screen">
       <div className="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden">
-      <div className="absolute inset-0 bg-black/50 z-10"></div>
+      <div className="absolute inset-0 bg-black/50 z-[1]"></div>
         <Image
           src="/bg.gif"
           alt="background"
