@@ -10,7 +10,12 @@ const isLowPerformanceDevice = () => {
   return isMobile;
 };
 
-export const FadeInOnScroll = ({ children }) => {
+/**
+ * FadeInOnScroll
+ * @param {children} ReactNode
+ * @param {animation} string - one of 'fade-in-up', 'fade-in-left', 'fade-in-right', 'fade-in-scale'
+ */
+export const FadeInOnScroll = ({ children, animation = "fade-in-up" }) => {
   const ref = useRef();
   const [isVisible, setIsVisible] = useState(false);
 
@@ -25,7 +30,10 @@ export const FadeInOnScroll = ({ children }) => {
           observer.disconnect();
         }
       },
-      { threshold: 0.1 }
+      { 
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px' // Start animation slightly before element comes into view
+      }
     );
 
     observer.observe(node);
@@ -35,8 +43,11 @@ export const FadeInOnScroll = ({ children }) => {
   return (
     <div
       ref={ref}
-      className={isVisible ? "fade-in-up" : ""}
-      style={{ willChange: "opacity, transform" }}
+      className={`transition-all duration-700 ${isVisible ? animation : 'opacity-0 invisible pointer-events-none'}`}
+      style={{ 
+        willChange: "opacity, transform",
+        transform: !isVisible ? 'translateY(20px)' : 'translateY(0)'
+      }}
     >
       {children}
     </div>
