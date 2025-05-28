@@ -8,10 +8,10 @@ const HomePage = () => {
                 <h2 className="text-white text-3xl md:text-5xl font-outfit font-normal text-shadow">Hey there, I am</h2>
                 <h1 className="text-[#FCA311] text-5xl md:text-7xl py-2 font-outfit font-semibold text-shadow">Andre Santiago</h1>
                 <p className="text-[#E5E5E5] max-w-[1850px] text-xl md:text-3xl py-5 font-outfit font-light text-shadow-sm">
-                I'm a software engineering graduate student passionate about building scalable, user-centered applications that solve real-world problems. 
-                I've done full-stack development in React, TypeScript, Node.js, and contemporary databases, ranging from AI platforms to 
-                real-time multiplayer games. Currently interning at Juno Health, I'm developing admin infrastructure alongside senior leadership while 
-                pursuing my Master's at Stevens Institute. I'm also a Graduate Research Assistant, teaching data engineering concepts to 20+ students. 
+                I&apos;m a software engineering graduate student passionate about building scalable, user-centered applications that solve real-world problems. 
+                I&apos;ve done full-stack development in React, TypeScript, Node.js, and contemporary databases, ranging from AI platforms to 
+                real-time multiplayer games. Currently interning at Juno Health, I&apos;m developing admin infrastructure alongside senior leadership while 
+                pursuing my Master&apos;s at Stevens Institute. I&apos;m also a Graduate Research Assistant, teaching data engineering concepts to 20+ students. 
                 I thrive on tackling complex technical challenges and am always eager to
                     <TypeAnimation
                         sequence={[
