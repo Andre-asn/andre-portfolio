@@ -1,35 +1,63 @@
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { useRef, useEffect, useState } from "react";
 
-const FadeInOnScroll = ({ children }) => {
-    const [ref, inView] = useInView({
-      triggerOnce: true, // Animation triggers only once when element enters the viewport
-      threshold: .4, // Change this value according to your needs
-    });
+// Check if the device is likely a low-performance device
+const isLowPerformanceDevice = () => {
+  // Check if we're in a browser environment
+  if (typeof window === 'undefined') return false;
   
-    const fadeInVariants = {
-      hidden: { opacity: 0, visibility: 'hidden'},
-      visible: { opacity: 1, visibility: 'visible'},
-    };
-  
-    return (
-      <motion.div
-        ref={ref}
-        initial="hidden"
-        animate={inView ? 'visible' : 'hidden'}
-        variants={fadeInVariants}
-        transition={{ duration: .65 }} // Adjust the duration as needed
-      >
-        {children}
-      </motion.div>
+  // Simple heuristic: mobile devices or older browsers
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  return isMobile;
+};
+
+export const FadeInOnScroll = ({ children }) => {
+  const ref = useRef();
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const node = ref.current;
+    if (!node) return;
+
+    const observer = new window.IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
     );
-  };
-  
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      className={isVisible ? "fade-in-up" : ""}
+      style={{ willChange: "opacity, transform" }}
+    >
+      {children}
+    </div>
+  );
+};
 
 const FadeInSides = ({ children, direction }) => {
+    const [isLowPerf, setIsLowPerf] = useState(false);
+    
+    useEffect(() => {
+      setIsLowPerf(isLowPerformanceDevice());
+    }, []);
+    
+    // If it's a low-performance device, don't animate
+    if (isLowPerf) {
+      return <div>{children}</div>;
+    }
+    
     const [ref, inView] = useInView({
       triggerOnce: true,
-      threshold: .2,
+      threshold: 0.1,
     });
   
     const fadeInVariants = {
@@ -51,11 +79,11 @@ const FadeInSides = ({ children, direction }) => {
         initial="hidden"
         animate={inView ? 'visible' : 'hidden'}
         variants={fadeInVariants}
-        transition={{ duration: 0.65 }}
+        transition={{ duration: 0.5 }}
       >
         {children}
       </motion.div>
     );
   };
 
-export { FadeInOnScroll, FadeInSides };
+export { FadeInSides };
