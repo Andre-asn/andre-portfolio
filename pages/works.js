@@ -34,11 +34,11 @@ const Works = () => {
                                 <div className="flex-grow">
                                     <h2 className="shadow-xl py-4 text-2xl text-white bg-[#14213D] w-full text-center mb-4 text-shadow">Nutrition AI</h2>
                                     <p className="text-lg md:text-xl break-words text-[#E5E5E5] text-center text-shadow-sm">
-                                        Current group project in my Agile Methods class. Working with a group of talented students to create an app that recognizes pictures of food and returns nutritional facts, along with added features like profiles, friends list, and more. Tech stack includes React + Vite, Node.js, Gemini API, and NeDB. Project will continue to be updated as the semester goes along.
+                                        Group project in my Agile Methods class. Working with a group of talented students to create an app that recognizes pictures of food and returns nutritional facts, along with added features like profiles, friends list, and more. Tech stack includes React + Vite, Node.js, Gemini API, and NeDB. Project will continue to be updated as the semester goes along.
                                     </p>
                                 </div>
                                 <div className="mt-4 flex justify-center">
-                                    <form action="https://github.com/danzam284/NutritionAI" target="_blank" className="shadow-lg ring-white ring-1 hover:bg-[#FCA311] transition ease-in-out text-white text-lg font-bold px-6 py-3 rounded text-shadow">
+                                    <form action="https://nutrition-ai-puce.vercel.app" target="_blank" className="shadow-lg ring-white ring-1 hover:bg-[#FCA311] transition ease-in-out text-white text-lg font-bold px-6 py-3 rounded text-shadow">
                                         <button type="submit">
                                             View
                                         </button>
