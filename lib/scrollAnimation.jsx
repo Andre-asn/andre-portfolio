@@ -1,4 +1,6 @@
 import { useRef, useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 // Check if the device is likely a low-performance device
 const isLowPerformanceDevice = () => {
@@ -55,46 +57,45 @@ export const FadeInOnScroll = ({ children, animation = "fade-in-up" }) => {
 };
 
 const FadeInSides = ({ children, direction }) => {
-    const [isLowPerf, setIsLowPerf] = useState(false);
-    
-    useEffect(() => {
-      setIsLowPerf(isLowPerformanceDevice());
-    }, []);
-    
-    // If it's a low-performance device, don't animate
-    if (isLowPerf) {
-      return <div>{children}</div>;
-    }
-    
-    const [ref, inView] = useInView({
-      triggerOnce: true,
-      threshold: 0.1,
-    });
-  
-    const fadeInVariants = {
-      hidden: {
-        opacity: 0,
-        visibility: 'hidden',
-        x: direction === 'left' ? '-70%' : '70%', // Move the element off the screen to the left or right
-      },
-      visible: {
-        opacity: 1,
-        visibility: 'visible',
-        x: 0, // Move the element to its original position
-      },
-    };
-  
-    return (
-      <motion.div
-        ref={ref}
-        initial="hidden"
-        animate={inView ? 'visible' : 'hidden'}
-        variants={fadeInVariants}
-        transition={{ duration: 0.5 }}
-      >
-        {children}
-      </motion.div>
-    );
+  const [isLowPerf, setIsLowPerf] = useState(false);
+  // Always call hooks at the top level
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  useEffect(() => {
+    setIsLowPerf(isLowPerformanceDevice());
+  }, []);
+
+  if (isLowPerf) {
+    return <div>{children}</div>;
+  }
+
+  const fadeInVariants = {
+    hidden: {
+      opacity: 0,
+      visibility: 'hidden',
+      x: direction === 'left' ? '-70%' : '70%',
+    },
+    visible: {
+      opacity: 1,
+      visibility: 'visible',
+      x: 0,
+    },
   };
+
+  return (
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={inView ? 'visible' : 'hidden'}
+      variants={fadeInVariants}
+      transition={{ duration: 0.5 }}
+    >
+      {children}
+    </motion.div>
+  );
+};
 
 export { FadeInSides };
