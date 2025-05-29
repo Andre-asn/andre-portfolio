@@ -117,3 +117,7 @@ body {
   animation: fadeInScale 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   visibility: visible !important;
 }
+
+.super-shadow {
+  box-shadow: 0 2px 12px 0 rgba(255,255,255,0.25), 0 1px 4px 0 rgba(0,0,0,0.3);
+}

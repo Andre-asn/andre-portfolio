@@ -11,7 +11,7 @@ const About = () => {
                 <div
                   className="
                     relative z-10
-                    bg-white/30
+                    bg-[#14213D]/90
                     rounded-lg
                     shadow-lg
                     mt-6 md:mt-0
@@ -21,7 +21,6 @@ const About = () => {
                     w-full
                     flex flex-col items-center
                   "
-                  style={{ backdropFilter: "blur(2px)" }}
                 >
                     <FadeInOnScroll animation="fade-in-up">
                       <h2 className="text-4xl md:text-6xl font-outfit font-normal text-white text-shadow text-center">
