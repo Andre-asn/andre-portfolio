@@ -1,21 +1,26 @@
 import { ChakraProvider } from "@chakra-ui/react";
-import '@/styles/globals.css'
-import Navbar from './navbar';
-import { SpeedInsights } from "@vercel/speed-insights/react"
+import { SpeedInsights } from "@vercel/speed-insights/react";
+import { Archivo } from "next/font/google";
+import "@/styles/globals.css";
+
+// Self-hosted by Next at build time, so there is no round trip to Google and
+// no flash of fallback text. The wdth axis is what the display type relies on.
+const archivo = Archivo({
+  subsets: ["latin"],
+  axes: ["wdth"],
+  weight: "variable",
+  display: "swap",
+  variable: "--font-archivo",
+  fallback: ["Helvetica Neue", "Helvetica", "Arial", "sans-serif"],
+});
 
 export default function App({ Component, pageProps }) {
   return (
-    <div className="relative min-h-screen">
-      {/* Blurred overlay */}
-      <div className="fixed inset-0 z-0 bg-black/30 pointer-events-none" />
-      {/* Main content */}
-      <div className="relative z-10">
-        <ChakraProvider>
-          <Navbar />
-          <Component {...pageProps} />
-        </ChakraProvider>
-        <SpeedInsights />
+    <ChakraProvider>
+      <div className={`${archivo.variable} font-sans`}>
+        <Component {...pageProps} />
       </div>
-    </div>
+      <SpeedInsights />
+    </ChakraProvider>
   );
 }
