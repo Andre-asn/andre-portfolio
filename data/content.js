@@ -21,14 +21,14 @@ export const route = [
 ];
 
 export const bio = [
-  "I am a software engineer finishing a master's in software engineering at Stevens Institute of Technology, graduating in December 2026. This past summer I was at Airbnb on the appeals platform, where I replaced about thirty hardcoded routing rules with a config-driven system so that policy owners could onboard new appeal types without an engineer in the loop. That took onboarding from roughly two weeks down to two days.",
-  "Before that I spent a summer at Juno Health building the API and permissions layer behind a provider admin platform, and a semester at Stevens as a graduate research assistant teaching weekly labs on data pipelines to graduate students. Teaching turned out to be the thing that sharpened my engineering most, because you cannot hand-wave a concept in front of twenty people who are about to be graded on it.",
-  "I grew up in Queens, moved to New Jersey in 2013, and never really left the area. Outside of work I am usually somewhere around the city looking for a new place to eat.",
+  "I'm finishing my master's at Stevens Institute of Technology and graduate in December 2026. This past summer I interned at Airbnb, where I built a config-driven routing system that cut appeal onboarding from about two weeks to two days. Before that I was at Juno Health building APIs and access control for a provider admin platform, and I taught weekly data labs at Stevens as a graduate research assistant.",
+  "I grew up in Queens, moved to New Jersey in middle school, and live in Fort Lee now. I'm a big foodie who is always looking for new places to eat, I love nightlife, and I'm a huge nerd.",
 ];
 
 export const experience = [
   {
     org: "Airbnb",
+    logo: "/logos/airbnb.svg",
     role: "Software Engineer Intern",
     period: "June to August 2026",
     year: "2026",
@@ -43,6 +43,7 @@ export const experience = [
   },
   {
     org: "Juno Health",
+    logo: "/logos/juno-health.png",
     role: "Software Engineer Intern",
     period: "May to August 2025",
     year: "2025",
@@ -56,13 +57,14 @@ export const experience = [
   },
   {
     org: "Stevens Institute of Technology",
+    logo: "/logos/stevens.png",
     role: "Graduate Research Assistant",
     period: "January to May 2025",
     year: "2025",
     place: "Hoboken, NJ",
     stack: ["Snowflake", "Snowpark", "SQL", "Python"],
     points: [
-      "Taught weekly lab sessions for more than twenty graduate students, walking them through real pipelines of over five million records in Snowflake and Snowpark.",
+      "Taught weekly lab sessions for more than twenty students, walking them through real pipelines of over five million records in Snowflake and Snowpark.",
       "Expanded the course curriculum with my supervisor by writing hands-on lab exercises and giving individual feedback on student work.",
     ],
   },

@@ -29,21 +29,22 @@ const RailNav = ({ active, onSelect }) => {
           {/* Track, then the portion already travelled. */}
           <span
             aria-hidden="true"
-            className="absolute top-[5px] hidden h-[2px] bg-rule md:block"
+            className="absolute top-[9px] hidden h-[2px] bg-rule md:block"
             style={{ left: `${edge}%`, right: `${edge}%` }}
           />
           <motion.span
             aria-hidden="true"
-            className="absolute top-[5px] hidden h-[2px] bg-route md:block"
+            className="absolute top-[9px] hidden h-[2px] bg-route md:block"
             style={{ left: `${edge}%` }}
             animate={{ width: `${(active / n) * 100}%` }}
             transition={travel}
           />
 
-          {/* The travelling signal marker. */}
+          {/* The travelling signal marker. top-1 matches the py-1 on each stop's
+              button, so the marker centres on the dot rather than 4px above it. */}
           <motion.span
             aria-hidden="true"
-            className="absolute top-0 z-10 hidden h-3 w-3 md:block"
+            className="absolute top-1 z-10 hidden h-3 w-3 md:block"
             animate={{ left: `calc(${markerLeft}% - 0.375rem)` }}
             transition={travel}
           >
