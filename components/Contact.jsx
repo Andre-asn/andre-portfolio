@@ -43,7 +43,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-ink text-paper">
+    <div className="contact-panel bg-ink text-paper">
       <div className="mx-auto w-full max-w-[1700px] px-6 py-5 short:py-3 sm:px-10">
         <div className="grid gap-8 md:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] md:gap-14">
           <div>

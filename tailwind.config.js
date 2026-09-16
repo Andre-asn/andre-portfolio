@@ -12,15 +12,18 @@ module.exports = {
         // setting of the same layout.
         short: { raw: "(max-height: 820px)" },
       },
+      // Values come from CSS variables in globals.css so the whole palette can
+      // be swapped for night mode. The <alpha-value> placeholder keeps the
+      // /opacity modifiers (bg-ink/45, text-paper/70 and so on) working.
       colors: {
-        paper: "#EEEDE6",
-        "paper-sunk": "#E5E3DA",
-        ink: "#14181C",
-        muted: "#5C6068",
-        rule: "#CFCBC1",
-        route: "#0039A6",
-        "route-deep": "#002B7F",
-        signal: "#FF6319",
+        paper: "rgb(var(--paper) / <alpha-value>)",
+        "paper-sunk": "rgb(var(--paper-sunk) / <alpha-value>)",
+        ink: "rgb(var(--ink) / <alpha-value>)",
+        muted: "rgb(var(--muted) / <alpha-value>)",
+        rule: "rgb(var(--rule) / <alpha-value>)",
+        route: "rgb(var(--route) / <alpha-value>)",
+        "route-deep": "rgb(var(--route-deep) / <alpha-value>)",
+        signal: "rgb(var(--signal) / <alpha-value>)",
       },
       fontFamily: {
         sans: ["var(--font-archivo)", "Helvetica Neue", "Helvetica", "Arial", "sans-serif"],

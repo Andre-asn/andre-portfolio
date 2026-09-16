@@ -1,6 +1,7 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Archivo } from "next/font/google";
+import ThemeToggle from "@/components/ThemeToggle";
 import "@/styles/globals.css";
 
 // Self-hosted by Next at build time, so there is no round trip to Google and
@@ -18,6 +19,7 @@ export default function App({ Component, pageProps }) {
   return (
     <ChakraProvider>
       <div className={`${archivo.variable} font-sans`}>
+        <ThemeToggle />
         <Component {...pageProps} />
       </div>
       <SpeedInsights />

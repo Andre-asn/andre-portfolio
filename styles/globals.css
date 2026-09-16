@@ -7,8 +7,41 @@
 @tailwind utilities;
 
 @layer base {
+  /* The palette lives here as rgb triplets so every Tailwind token, including
+     the /opacity variants used throughout, can be themed from one place. */
   :root {
     color-scheme: light;
+    --paper: 238 237 230;
+    --paper-sunk: 229 227 218;
+    --ink: 20 24 28;
+    --muted: 92 96 104;
+    --rule: 207 203 193;
+    --route: 0 57 166;
+    --route-deep: 0 43 127;
+    --signal: 255 99 25;
+  }
+
+  /* Contact is inverted against the page ground. Under night mode that would
+     leave it the only pale panel on the site, so within it the ground tokens
+     are swapped back: bg-ink becomes the raised dark surface and text-paper
+     becomes the bone text, which keeps every utility inside it correct. */
+  :root[data-theme="dark"] .contact-panel {
+    --ink: 24 28 33;
+    --paper: 235 233 226;
+    --paper-sunk: 34 39 45;
+    --rule: 60 66 74;
+  }
+
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --paper: 17 20 24;
+    --paper-sunk: 24 28 33;
+    --ink: 235 233 226;
+    --muted: 150 156 164;
+    --rule: 52 58 66;
+    --route: 106 152 255;
+    --route-deep: 74 120 224;
+    --signal: 255 128 66;
   }
 
   html {
@@ -24,18 +57,19 @@
 
   body {
     @apply bg-paper text-ink font-sans antialiased;
+    transition: background-color 250ms ease, color 250ms ease;
     font-size: 1.0625rem;
     line-height: 1.65;
   }
 
   ::selection {
-    background: #0039A6;
-    color: #EEEDE6;
+    background: rgb(var(--route));
+    color: rgb(var(--paper));
   }
 
   /* One visible focus treatment for the whole page. */
   :focus-visible {
-    outline: 2px solid #0039A6;
+    outline: 2px solid rgb(var(--route));
     outline-offset: 3px;
     border-radius: 2px;
   }
@@ -66,15 +100,15 @@
   /* Written longhand: Tailwind 3.3 has no opacity modifier for
      decoration colors, so @apply cannot express the resting state. */
   .link-underline {
-    color: #0039A6;
+    color: rgb(var(--route));
     text-decoration-line: underline;
-    text-decoration-color: rgba(0, 57, 166, 0.35);
+    text-decoration-color: rgb(var(--route) / 0.35);
     text-underline-offset: 4px;
     transition: text-decoration-color 150ms ease;
   }
 
   .link-underline:hover {
-    text-decoration-color: #0039A6;
+    text-decoration-color: rgb(var(--route));
   }
 }
 
