@@ -23,17 +23,6 @@
     --logo-wash: 0.16;
   }
 
-  /* Contact is inverted against the page ground. Under night mode that would
-     leave it the only pale panel on the site, so within it the ground tokens
-     are swapped back: bg-ink becomes the raised dark surface and text-paper
-     becomes the bone text, which keeps every utility inside it correct. */
-  :root[data-theme="dark"] .contact-panel {
-    --ink: 24 28 33;
-    --paper: 235 233 226;
-    --paper-sunk: 34 39 45;
-    --rule: 60 66 74;
-  }
-
   :root[data-theme="dark"] {
     color-scheme: dark;
     --paper: 17 20 24;

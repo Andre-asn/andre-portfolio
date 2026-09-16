@@ -8,8 +8,10 @@ import { profile } from "@/data/content";
 const initValues = { fullname: "", email: "", subject: "", message: "" };
 const initState = { isLoading: false, error: "", values: initValues };
 
+// Contact sits on the same ground as every other panel, so the fields are
+// outlined against the page rather than filled against a dark banner.
 const fieldClass =
-  "w-full rounded-card border border-paper/25 bg-paper/5 px-3.5 py-2.5 text-lede text-paper placeholder:text-paper/35 transition-colors focus:border-paper/60 focus:outline-none";
+  "w-full rounded-card border border-rule bg-paper px-3.5 py-2.5 text-lede text-ink placeholder:text-muted/60 transition-colors focus:border-ink focus:outline-none";
 
 const Contact = () => {
   const toast = useToast();
@@ -43,14 +45,14 @@ const Contact = () => {
   };
 
   return (
-    <div className="contact-panel bg-ink text-paper">
+    <div className="w-full">
       <div className="mx-auto w-full max-w-[1700px] px-6 py-5 short:py-3 sm:px-10">
         <div className="grid gap-8 md:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] md:gap-14">
           <div>
-            <AxisHeading className="text-h2 font-bold text-paper" from={108}>
+            <AxisHeading className="text-h2 font-bold text-ink" from={108}>
               Get in touch
             </AxisHeading>
-            <p className="mt-4 max-w-prose text-body text-paper/70">
+            <p className="mt-4 max-w-prose text-body text-muted">
               I am looking for full-time software engineering roles starting after I
               graduate in December 2026. If you are hiring, or you just want to talk
               about something you are building, use the form and it will reach me
@@ -59,8 +61,8 @@ const Contact = () => {
 
             <dl className="mt-6 space-y-3 text-body">
               <div>
-                <dt className="text-paper/50">Based in</dt>
-                <dd className="text-paper/90">{profile.location}</dd>
+                <dt className="text-muted">Based in</dt>
+                <dd className="text-ink">{profile.location}</dd>
               </div>
             </dl>
           </div>
@@ -80,7 +82,7 @@ const Contact = () => {
 
             <div className="grid gap-5 sm:grid-cols-2">
               <div>
-                <label htmlFor="fullname" className="block text-body text-paper/70 mb-2">
+                <label htmlFor="fullname" className="block text-body text-muted mb-2">
                   Full name
                 </label>
                 <input
@@ -95,7 +97,7 @@ const Contact = () => {
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-body text-paper/70 mb-2">
+                <label htmlFor="email" className="block text-body text-muted mb-2">
                   Email address
                 </label>
                 <input
@@ -112,7 +114,7 @@ const Contact = () => {
             </div>
 
             <div className="mt-4">
-              <label htmlFor="subject" className="block text-body text-paper/70 mb-2">
+              <label htmlFor="subject" className="block text-body text-muted mb-2">
                 Subject
               </label>
               <input
@@ -128,7 +130,7 @@ const Contact = () => {
             </div>
 
             <div className="mt-4">
-              <label htmlFor="message" className="block text-body text-paper/70 mb-2">
+              <label htmlFor="message" className="block text-body text-muted mb-2">
                 Message
               </label>
               <textarea
@@ -149,14 +151,14 @@ const Contact = () => {
               whileHover={reduced || isLoading ? undefined : { y: -2 }}
               whileTap={reduced || isLoading ? undefined : { y: 0, scale: 0.99 }}
               transition={{ duration: 0.2, ease }}
-              className="mt-5 w-full rounded-card bg-paper px-5 py-3 text-body font-semibold text-ink transition-colors hover:bg-signal disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto sm:px-10"
+              className="mt-5 w-full rounded-card bg-ink px-5 py-3 text-body font-semibold text-paper transition-colors hover:bg-route disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto sm:px-10"
             >
               {isLoading ? "Sending" : "Send message"}
             </motion.button>
           </form>
         </div>
 
-        <p className="mt-8 border-t border-paper/15 pt-4 text-small text-paper/45">
+        <p className="mt-8 border-t border-rule pt-4 text-small text-muted">
           Designed and built by {profile.name}.
         </p>
       </div>
