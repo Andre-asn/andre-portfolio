@@ -57,7 +57,7 @@ export const experience = [
   },
   {
     org: "Stevens Institute of Technology",
-    logo: "/logos/stevens.png",
+    logo: "/logos/stevens.svg",
     role: "Graduate Research Assistant",
     period: "January to May 2025",
     year: "2025",
