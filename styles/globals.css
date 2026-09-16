@@ -19,6 +19,8 @@
     --route: 0 57 166;
     --route-deep: 0 43 127;
     --signal: 255 99 25;
+    /* Strength of the company logo wash behind each experience box. */
+    --logo-wash: 0.16;
   }
 
   /* Contact is inverted against the page ground. Under night mode that would
@@ -42,6 +44,8 @@
     --route: 106 152 255;
     --route-deep: 74 120 224;
     --signal: 255 128 66;
+    /* Logos need more presence against the dark ground. */
+    --logo-wash: 0.26;
   }
 
   html {
