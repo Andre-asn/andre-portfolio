@@ -11,7 +11,7 @@ const initState = { isLoading: false, error: "", values: initValues };
 // Contact sits on the same ground as every other panel, so the fields are
 // outlined against the page rather than filled against a dark banner.
 const fieldClass =
-  "w-full rounded-card border border-rule bg-paper px-3.5 py-2.5 text-lede text-ink placeholder:text-muted/60 transition-colors focus:border-ink focus:outline-none";
+  "w-full rounded-card border border-rule bg-paper px-3.5 py-2.5 text-lede text-ink placeholder:text-muted transition-colors focus:border-ink focus:outline-none";
 
 const Contact = () => {
   const toast = useToast();
@@ -46,7 +46,7 @@ const Contact = () => {
 
   return (
     <div className="w-full">
-      <div className="mx-auto w-full max-w-[1700px] px-6 py-5 short:py-3 sm:px-10">
+      <div className="mx-auto w-full max-w-[1700px] px-6 py-5 short:py-3 sm:px-10 max-md:pb-28">
         <div className="grid gap-8 md:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] md:gap-14">
           <div>
             <AxisHeading className="text-h2 font-bold text-ink" from={108}>
@@ -124,7 +124,7 @@ const Contact = () => {
                 required
                 value={values.subject}
                 onChange={handleChange}
-                placeholder="Backend role at Acme"
+                placeholder="Backend engineering role"
                 className={fieldClass}
               />
             </div>

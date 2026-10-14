@@ -46,6 +46,7 @@
      it sideways on a phone. */
   body {
     overflow-x: clip;
+    -webkit-tap-highlight-color: transparent;
   }
 
   body {

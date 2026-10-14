@@ -60,7 +60,8 @@ const Experience = () => {
           Experience
         </AxisHeading>
         <p className="mt-1 text-body text-muted short:text-small">
-          Hover a role for details.
+          <span className="md:hidden">Tap a role for details.</span>
+          <span className="max-md:hidden">Hover a role for details.</span>
         </p>
 
         <div className="mt-5 flex flex-col gap-4 md:mt-6 md:h-[clamp(400px,64vh,660px)] md:flex-row md:gap-5">
@@ -74,10 +75,12 @@ const Experience = () => {
                 initial={false}
                 animate={{ flexGrow: isOpen ? OPEN_GROW : 1 }}
                 transition={growTransition}
-                style={{ flexBasis: 0 }}
-                onMouseEnter={() => open(id)}
-                onMouseLeave={() => close(id)}
-                className={`group relative flex min-w-0 flex-col overflow-hidden rounded-card border transition-colors ${
+                // Hover is mouse-only, so a tap on a phone is handled by onClick alone.
+                onPointerEnter={(e) => e.pointerType === "mouse" && open(id)}
+                onPointerLeave={(e) => e.pointerType === "mouse" && close(id)}
+                // Zero basis only in the desktop row: in the phone column it
+                // collapsed every box to zero height (overflow-hidden drops min-height).
+                className={`group relative flex min-w-0 flex-col overflow-hidden rounded-card border transition-colors max-md:min-h-[13rem] md:basis-0 ${
                   isOpen ? "border-ink bg-paper-sunk" : "border-rule bg-paper hover:border-ink"
                 }`}
               >
@@ -172,9 +175,11 @@ const Experience = () => {
                 {/* Keyboard and touch equivalent of hovering. */}
                 <button
                   type="button"
-                  onFocus={() => open(id)}
+                  // Focus opens only from the keyboard; a tap also focuses, and
+                  // opening there would undo the click's toggle.
+                  onFocus={(e) => e.target.matches(":focus-visible") && open(id)}
                   onBlur={() => close(id)}
-                  onClick={() => open(id)}
+                  onClick={() => setOpenId((current) => (current === id ? null : id))}
                   aria-expanded={isOpen}
                   aria-controls={`experience-${id}`}
                   aria-label={`Show details for ${job.role} at ${job.org}`}

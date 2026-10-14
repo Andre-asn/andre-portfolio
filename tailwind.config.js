@@ -1,5 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  // Touch screens fire hover on tap and leave it stuck, so hover styles
+  // only apply where a real pointer can hover.
+  future: { hoverOnlyWhenSupported: true },
   content: [
     "./pages/**/*.{js,jsx}",
     "./components/**/*.{js,jsx}",
@@ -7,11 +10,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      screens: {
-        // Panels are clipped, not scrolled, so short viewports need a smaller
-        // setting of the same layout.
-        short: { raw: "(max-height: 820px)" },
-      },
       // Values come from CSS variables in globals.css so the whole palette can
       // be swapped for night mode. The <alpha-value> placeholder keeps the
       // /opacity modifiers (bg-ink/45, text-paper/70 and so on) working.
@@ -46,5 +44,10 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    // Panels are clipped, not scrolled, so short viewports need a smaller
+    // setting of the same layout. A variant, not a screen: a raw screen makes
+    // Tailwind drop every max-md: class.
+    ({ addVariant }) => addVariant("short", "@media (max-height: 820px)"),
+  ],
 }

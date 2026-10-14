@@ -79,7 +79,7 @@ const ThemeToggle = () => {
       aria-checked={dark}
       aria-label="Night mode"
       title={dark ? "Switch to day mode" : "Switch to night mode"}
-      className="fixed right-5 top-5 z-50 flex h-8 w-14 shrink-0 items-center rounded-full border border-rule bg-paper-sunk px-1 transition-colors hover:border-ink sm:right-8 sm:top-6"
+      className="fixed right-5 top-5 max-md:absolute z-50 flex h-8 w-14 shrink-0 items-center rounded-full border border-rule bg-paper-sunk px-1 transition-colors hover:border-ink sm:right-8 sm:top-6"
     >
       <span
         className={`flex h-6 w-6 items-center justify-center rounded-full bg-ink text-paper transition-transform duration-300 motion-reduce:transition-none ${
