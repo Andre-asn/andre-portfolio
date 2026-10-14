@@ -69,7 +69,7 @@ const Hero = () => {
             target="_blank"
             rel="noreferrer noopener"
             whileHover={reduced ? undefined : { y: -2 }}
-            whileTap={{ y: 0 }}
+            whileTap={{ scale: 0.97 }}
             transition={{ duration: 0.2, ease }}
             className="inline-flex items-center gap-2 rounded-card bg-ink px-5 py-2.5 text-small font-medium text-paper transition-colors hover:bg-route"
           >
@@ -83,7 +83,7 @@ const Hero = () => {
             target="_blank"
             rel="noreferrer noopener"
             whileHover={reduced ? undefined : { y: -2 }}
-            whileTap={{ y: 0 }}
+            whileTap={{ scale: 0.97 }}
             transition={{ duration: 0.2, ease }}
             className="inline-flex items-center gap-2 rounded-card border border-rule px-5 py-2.5 text-small font-medium text-ink transition-colors hover:border-ink"
           >
