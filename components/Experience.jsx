@@ -13,8 +13,10 @@ import { AxisHeading, ease } from "@/components/motion";
  *
  * Each closed box carries its company logo as an oversized wash filling the
  * space under the text: too big for the box, so it is cropped by the edges, and
- * masked so it fades out before it reaches the heading. The wash fades away
- * while a box is open and returns when it closes.
+ * masked so it fades out before it reaches the heading. On phones the boxes
+ * are wide and short, so the logo moves to the right-hand side and fades out
+ * towards the text instead. The wash fades away while a box is open and
+ * returns when it closes.
  *
  * Hover drives this, so keyboard focus does too. Focus expands the same way,
  * which keeps the detail reachable without a pointer.
@@ -24,9 +26,6 @@ const slug = (job) => job.org.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 
 // How much wider the open box grows relative to a closed one.
 const OPEN_GROW = 2.4;
-
-// Fades the wash out towards its own top, so it never crowds the heading.
-const WASH_MASK = "linear-gradient(to top, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 100%)";
 
 const PlusIcon = ({ open }) => (
   <svg
@@ -80,29 +79,21 @@ const Experience = () => {
                 onPointerLeave={(e) => e.pointerType === "mouse" && close(id)}
                 // Zero basis only in the desktop row: in the phone column it
                 // collapsed every box to zero height (overflow-hidden drops min-height).
-                className={`group relative flex min-w-0 flex-col overflow-hidden rounded-card border transition-colors max-md:min-h-[13rem] md:basis-0 ${
+                className={`group relative flex min-w-0 flex-col overflow-hidden rounded-card border transition-colors md:basis-0 ${
                   isOpen ? "border-ink bg-paper-sunk" : "border-rule bg-paper hover:border-ink"
                 }`}
               >
                 {/* Logo wash: oversized so the box crops it, and hidden while open. */}
                 <motion.div
                   aria-hidden="true"
-                  className="pointer-events-none absolute inset-x-0 bottom-0 top-[44%] overflow-hidden"
+                  className="pointer-events-none absolute inset-x-0 bottom-0 top-[44%] overflow-hidden max-md:inset-y-4 max-md:left-auto max-md:w-[55%]"
                   initial={false}
                   animate={{ opacity: isOpen ? 0 : 1 }}
                   transition={washTransition}
                 >
                   <div
-                    className="h-full w-full bg-no-repeat opacity-[var(--logo-wash)]"
-                    style={{
-                      backgroundImage: `url("${job.logo}")`,
-                      // A little wider than the box, so the mark just runs off
-                      // the edges while still reading as the logo.
-                      backgroundSize: "112% auto",
-                      backgroundPosition: "center bottom -6%",
-                      maskImage: WASH_MASK,
-                      WebkitMaskImage: WASH_MASK,
-                    }}
+                    className="logo-wash h-full w-full opacity-[var(--logo-wash)]"
+                    style={{ backgroundImage: `url("${job.logo}")` }}
                   />
                 </motion.div>
 
@@ -116,7 +107,7 @@ const Experience = () => {
                       className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-colors ${
                         isOpen
                           ? "border-ink bg-ink text-paper"
-                          : "border-rule text-ink group-hover:border-ink"
+                          : "border-rule bg-paper text-ink group-hover:border-ink"
                       }`}
                     >
                       <PlusIcon open={isOpen} />

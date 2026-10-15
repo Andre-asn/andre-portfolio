@@ -104,6 +104,28 @@
   .link-underline:hover {
     text-decoration-color: rgb(var(--route));
   }
+
+  /* Company logo behind each closed Experience box. On desktop it is a little
+     wider than the box, so the mark runs off the edges, and fades out towards
+     the heading above it. */
+  .logo-wash {
+    background-repeat: no-repeat;
+    background-size: 112% auto;
+    background-position: center bottom -6%;
+    mask-image: linear-gradient(to top, #000 55%, transparent);
+    -webkit-mask-image: linear-gradient(to top, #000 55%, transparent);
+  }
+
+  /* Phone boxes are wide and short: the whole mark fits on the right, just
+     running off that edge, and fades out towards the text on the left. */
+  @media (max-width: 767px) {
+    .logo-wash {
+      background-size: contain;
+      background-position: right -1rem center;
+      mask-image: linear-gradient(to left, #000 50%, transparent);
+      -webkit-mask-image: linear-gradient(to left, #000 50%, transparent);
+    }
+  }
 }
 
 /* Motion drives the hero sequence and honours prefers-reduced-motion itself
