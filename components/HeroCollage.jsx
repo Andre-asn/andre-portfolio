@@ -29,7 +29,7 @@ const HeroCollage = () => {
   const reduced = useReducedMotion();
 
   return (
-    <div className="relative h-full min-h-[420px] w-full" aria-hidden="true">
+    <div className="relative h-full w-full md:min-h-[420px]" aria-hidden="true">
       {photos.map((p, i) => (
         <motion.div
           key={p.src}
@@ -53,7 +53,7 @@ const HeroCollage = () => {
             alt=""
             width={p.w}
             height={p.h}
-            sizes="(min-width: 1280px) 20vw, 25vw"
+            sizes="(min-width: 1280px) 20vw, (min-width: 768px) 25vw, 45vw"
             priority={i < 2}
             className="h-auto w-full rounded-[2px] object-cover"
           />

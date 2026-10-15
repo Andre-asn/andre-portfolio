@@ -18,7 +18,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative flex w-full flex-col justify-center py-8 max-md:min-h-[100svh] max-md:py-24">
+    <div className="relative flex w-full flex-col justify-center overflow-x-clip py-8 max-md:min-h-[100svh] max-md:py-24">
       {/* The hero's own content supplies the depth layers. Nothing decorative
           is added: the text and the route line simply travel at different
           rates as the scene scrolls away. */}
@@ -39,7 +39,7 @@ const Hero = () => {
         </motion.p>
 
         {/* Each line rises out of its own clipped band. */}
-        <h1 className="text-display font-bold text-ink">
+        <h1 className="text-display font-bold text-ink max-md:text-[clamp(2rem,9.6vw,3rem)]">
           {[
             { text: "Andre", wdth: wdthLine1 },
             { text: "Santiago-Neyra", wdth: wdthLine2 },
@@ -97,10 +97,14 @@ const Hero = () => {
 
       </div>
 
-          {/* Right half: the collage, at its own parallax depth between the
-              text block and the route line. */}
-          <div className="hidden h-full md:block">
-            <HeroCollage />
+          {/* Right half on desktop; below the actions on phones, so the
+              photos are not lost on a small screen. */}
+          <div className="mx-auto h-[18rem] w-full max-w-[26rem] pt-16 md:h-full md:max-w-none md:pt-0">
+            {/* The pile is laid out for the desktop column and leans left, so
+                phones shift it to sit centred. */}
+            <div className="h-full max-md:translate-x-[18.5%] md:contents">
+              <HeroCollage />
+            </div>
           </div>
         </div>
       </div>
