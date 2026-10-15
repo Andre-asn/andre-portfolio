@@ -2,8 +2,8 @@ import { motion, useReducedMotion } from "framer-motion";
 import { projects } from "@/data/content";
 import { AxisHeading, Reveal, ease } from "@/components/motion";
 
+// A still dot: the rail marker is the only thing on the page that pulses.
 const StatusTag = ({ status }) => {
-  const reduced = useReducedMotion();
   const isLive = status === "Live";
 
   return (
@@ -12,30 +12,10 @@ const StatusTag = ({ status }) => {
         isLive ? "text-ink" : "text-muted"
       }`}
     >
-      {/* Live projects get the same signal pulse as the rail's current stop. */}
-      <span className="relative block h-2 w-2">
-        {isLive && !reduced && (
-          <motion.span
-            aria-hidden="true"
-            className="absolute inset-0 rounded-full bg-signal"
-            initial={{ opacity: 0 }}
-            animate={{ scale: [1, 3.2], opacity: [0.8, 0] }}
-            transition={{ duration: 1.8, repeat: Infinity, ease: "easeOut", delay: 1.2 }}
-          />
-        )}
-        <motion.span
-          aria-hidden="true"
-          className={`relative block h-2 w-2 rounded-full ${
-            isLive ? "bg-signal" : "bg-rule"
-          }`}
-          animate={isLive && !reduced ? { scale: [1, 0.82, 1] } : undefined}
-          transition={
-            isLive && !reduced
-              ? { duration: 1.8, repeat: Infinity, ease: "easeInOut", delay: 1.2 }
-              : undefined
-          }
-        />
-      </span>
+      <span
+        aria-hidden="true"
+        className={`block h-2 w-2 rounded-full ${isLive ? "bg-signal" : "bg-rule"}`}
+      />
       {status}
     </span>
   );
